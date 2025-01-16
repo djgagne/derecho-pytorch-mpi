@@ -6,7 +6,7 @@ activate_env=${activate_env:-true}
 # package version defaults (set-if-unset)
 export PYTORCH_VERSION="${PYTORCH_VERSION:-2.3.1}"
 export ENV_PYTHON_VERSION="${ENV_PYTHON_VERSION:-3.11}"
-export MPI4PY_VERSION="${MPI4PY_VERSION:-4.0.0}"
+export MPI4PY_VERSION="${MPI4PY_VERSION:-4.0.1}"
 
 #-------------------------------------------------------------------------------
 # setup host environment
@@ -16,26 +16,18 @@ source ${script_dir}/profile.d/modules.sh >/dev/null 2>&1 \
 case "${PYTORCH_VERSION}" in
     # see https://github.com/pytorch/vision for torch & vision compatibility
     "2.5.1")
-        #module load cudnn/9.2.0.82-12
-        #module load cudnn/8.8.1.3-12
         export TORCHVISION_VERSION="0.20.1"
         ;;
     "2.4.1")
-        #module load cudnn/9.2.0.82-12
-        #module load cudnn/8.8.1.3-12
         export TORCHVISION_VERSION="0.19.1"
         ;;
     "2.4.0")
-        #module load cudnn/9.2.0.82-12
-        #module load cudnn/8.8.1.3-12
         export TORCHVISION_VERSION="0.19.0"
         ;;
     "2.3.1")
-        #module load cudnn/8.8.1.3-12
         export TORCHVISION_VERSION="0.18.1"
         ;;
     "2.2.2")
-        #module load cudnn/8.8.1.3-12
         export TORCHVISION_VERSION="0.17.2"
         ;;
     *)
